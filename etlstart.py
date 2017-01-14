@@ -1,6 +1,6 @@
 # -*- coding: UTF-8 -*-
 from pyspark import  SparkContext
-import os,traceback,random,codecs
+import os,codecs
 
 
 def processfile(record):
