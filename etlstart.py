@@ -2,7 +2,7 @@
 from pyspark import  SparkContext
 import os,codecs
 
-
+#生成中间文件（类似于数据库中格式），并存储到results.txt文件中
 def processfile(record):
     data = []
     line_list = record[1].split('\n')
@@ -51,11 +51,13 @@ def processfile(record):
             string = ','.join(item).encode('utf8')
             print >> f1,string.decode('utf8')
 
+#从列表转换为str类型
 def map_list_string(record):
     for item in record:
         string = u','.join(item).encode('utf8')
     return string
-
+    
+#过滤序列长度小于2的项
 def filterone(line):
     try:
         if int(line[-1]) > 1:
