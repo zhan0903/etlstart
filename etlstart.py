@@ -67,7 +67,6 @@ def filterone(line):
 
 if __name__ == "__main__":
     file_dir = "./csv"
-    data = []
     sc = SparkContext("local[4]", "First Spark App")
     raw_data = sc.wholeTextFiles(file_dir)
     partitions = raw_data.getNumPartitions()
