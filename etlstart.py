@@ -1,4 +1,7 @@
 # -*- coding: UTF-8 -*-
+#原始数据文件放在当前目录下的csv目录下，数据清洗最终结果会放在当前目录下的output目录下
+#程序运行方式（命令行方式）：／path／spark-summit etlstart.py
+
 from pyspark import  SparkContext
 import os,codecs
 
@@ -56,7 +59,7 @@ def map_list_string(record):
     for item in record:
         string = u','.join(item).encode('utf8')
     return string
-    
+
 #过滤序列长度小于2的项
 def filterone(line):
     try:
