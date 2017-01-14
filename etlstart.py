@@ -54,7 +54,7 @@ def processfile(record):
             string = ','.join(item).encode('utf8')
             print >> f1,string.decode('utf8')
 
-#从列表转换为str类型
+#把列表转换为str类型
 def map_list_string(record):
     for item in record:
         string = u','.join(item).encode('utf8')
