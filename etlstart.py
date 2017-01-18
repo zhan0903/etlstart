@@ -83,6 +83,8 @@ if __name__ == "__main__":
     data_out = sc.textFile('./results.txt').map(lambda line: line.split(",")).\
     filter(filterone).map(lambda line:(line[0],line)).\
     groupByKey().mapValues(list).filter(lambda item:len(item[1]) > 3).\
-    flatMapValues(lambda item: item).map(map_list_string).saveAsTextFile("./output")
+    flatMapValues(lambda item: item)#.map(map_list_string)#.saveAsTextFile("./output")
+
+    print data_out.take(10)
 
     sc.stop()

@@ -18,7 +18,7 @@ def processfile(record):
     last_data_record = []#modifyed by Xueping
     first_data_record = []#modifyed by Xueping
     count = 0
-    
+
 
     for item in line_list:#for each user information
         if item == '':
@@ -44,7 +44,7 @@ def processfile(record):
                     first_data_record = []
 
                 count = 0
-                
+
         else:# another device id
             count = 0 #modifyed by Xueping
             user = check[3:]
@@ -81,9 +81,9 @@ def filterone(line):
     except Exception:
         print line
 
-    
+
 if __name__ == "__main__":
-    file_dir = "/home/xuepeng/Desktop/smarthome"
+    file_dir = "./csv"
     sc = SparkContext("local[20]", "First Spark App")
     raw_data = sc.wholeTextFiles(file_dir)
 #     partitions = raw_data.getNumPartitions()
